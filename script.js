@@ -9,25 +9,40 @@ class Person {
     return this._name;
   }
 
-  set age(age) {
-    this._age = age;
+  set name(value) {
+    this._name = value;
   }
 
   get age() {
     return this._age;
   }
+
+  set age(value) {
+    this._age = value;
+  }
 }
 
+
 class Student extends Person {
-  study() {
-    console.log(`${this._name} is studying`);
-  }
+	study(){
+		console.log(`${this.name} is studying`);
+     }
 }
 
 class Teacher extends Person {
-  teach() {
-    console.log(`${this._name} is teaching`);
-  }
+	teach(){
+		console.log(`${this.name} is teaching`);
+	}
+}
+const person = new Person("John", 25);
+person.age = 30;
+console.log(person.age);  
+
+const student = new Student("John", 30);
+student.study();  
+
+const teacher = new Teacher("Alice", 30);
+teacher.teach();  
 
 // Do not change the code below this line
 window.Person = Person;
